@@ -18,10 +18,9 @@ python -m sanghatan.bench        # regenerate the chart below
 - **Training** (`train.py`) — softmax cross-entropy, hand-rolled Adam,
   `vmap` batch, the whole loop as one `jit`-ed `lax.scan`.
 - **Sharding** (`shard.py`) — tensor- and data-parallel forward on a device
-  mesh; dumps + annotates the HLO ([notes/05](notes/05_hlo_walkthrough.md)).
+  mesh; dumps + annotates the HLO ([notes/05]).
 - **KV-cache decode** (`kvcache.py`) — parallel prefill + fixed-buffer
-  single-token decode, bit-identical to naive recompute
-  ([notes/06](notes/06_kvcache_bench.md)).
+  single-token decode, bit-identical to naive recompute.
 - **bf16** (`precision.py`), **2D data×tensor parallel** (`mesh2d.py`),
   **`jax.checkpoint`** (`remat.py`), **flash-style attention** (`flash.py`).
 
