@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sanghatan"
+version = "0.0.1"
+description = "A mini functional training library, built to learn JAX from the ground up."
+requires-python = ">=3.9"
+dependencies = [
+    "jax>=0.4.30",
+    "jaxlib>=0.4.30",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+# chart generation only (sanghatan.bench); the library itself is zero-dep
+# beyond jax, and the rendered assets/bench.png is committed.
+bench = ["matplotlib>=3.8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
